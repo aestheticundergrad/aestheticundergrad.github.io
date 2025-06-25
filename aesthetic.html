@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Aesthetic Undergrad | Visual Playground</title>
+  <link rel="icon" href="favicon-au.png" type="image/png">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+  <!-- Identity Switch -->
+  <div class="identity-switch">
+    <a href="index.html" class="inactive">ANDREAS JUGUETA</a>
+    <span class="divider">⇄</span>
+    <span class="active">AESTHETIC UNDERGRAD</span>
+  </div>
+
+  <section id="top" class="first">
+    <header>
+      <div class="menu-creative">
+        <ul>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#visuals">Visuals</a></li>
+          <li><a href="#archive">Archive</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <video src="video_compressed.mp4" muted loop autoplay playsinline></video>
+    <div class="overlay"></div>
+    <div class="text">
+      <h2>Creative Developer</h2>
+      <h3>Portfolio & Projects</h3>
+      <p>Welcome to the visual world of Aesthetic Undergrads.</p>
+      <a href="#vision">Enter</a>
+    </div>
+
+    <ul class="social">
+      <li><a href="https://www.instagram.com/aestheticundergrads/" target="_blank">
+        <img src="instagram.png" alt="Instagram">
+      </a></li>
+    </ul>
+  </section>
+
+  <!-- Sections -->
+  <section id="vision" class="section">
+    <h2>Vision</h2>
+    <p>The message, identity, or core idea of Aesthetic Undergrad.</p>
+  </section>
+
+  <section id="visuals" class="section">
+    <h2>Visuals</h2>
+    <p>Gallery of motion designs, 3D, or media art pieces.</p>
+  </section>
+
+  <section id="archive" class="section">
+    <h2>Archive</h2>
+    <p>Old or raw work, ideas, or design sketches.</p>
+  </section>
+
+  <section id="connect" class="section">
+    <h2>Connect</h2>
+    <p>Link to social, email, or collaborations.</p>
+  </section>
+
+  <div class="nav-arrows hidden">
+  <a href="#" class="arrow up" title="Up">↑</a>
+  <a href="#" class="arrow down" title="Down">↓</a>
+</div>
+
+<script>
+  const sections = [...document.querySelectorAll('.section')];
+  const upArrow = document.querySelector('.arrow.up');
+  const downArrow = document.querySelector('.arrow.down');
+  const navArrows = document.querySelector('.nav-arrows');
+
+  function getCurrentIndex() {
+    let closest = 0;
+    let minDistance = Infinity;
+    const scroll = window.scrollY;
+    sections.forEach((sec, index) => {
+      const distance = Math.abs(sec.offsetTop - scroll);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closest = index;
+      }
+    });
+    return closest;
+  }
+
+  function toggleArrowVisibility() {
+    const trigger = sections[0].offsetTop - 100; // 100px past hero section
+    if (window.scrollY >= trigger) {
+      navArrows.classList.remove('hidden');
+    } else {
+      navArrows.classList.add('hidden');
+    }
+  }
+
+  window.addEventListener('scroll', toggleArrowVisibility);
+
+  upArrow.addEventListener('click', (e) => {
+    e.preventDefault();
+    const current = getCurrentIndex();
+    const target = sections[Math.max(current - 1, 0)];
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  downArrow.addEventListener('click', (e) => {
+    e.preventDefault();
+    const current = getCurrentIndex();
+    const target = sections[Math.min(current + 1, sections.length - 1)];
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
