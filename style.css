@@ -113,7 +113,7 @@ header {
   color: #fff;
 }
 
-/* ========== Unified Nav Style ========== */
+/* ========== Unified Nav ========== */
 
 .menu-professional ul,
 .menu-creative ul {
@@ -241,35 +241,7 @@ header {
   color: #fff;
 }
 
-/* ========== Responsive ========== */
-
-@media (max-width: 991px) {
-  .first,
-  .first header {
-    padding: 40px;
-    flex-direction: column;
-  }
-
-  .text h2 {
-    font-size: 3em;
-  }
-
-  .text h3 {
-    font-size: 2em;
-  }
-
-  .menu-professional ul,
-  .menu-creative ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .identity-switch {
-    font-size: 1.4em;
-    flex-direction: column;
-    gap: 6px;
-  }
-}
+/* ========== Scroll Arrows ========== */
 
 .nav-arrows {
   position: fixed;
@@ -303,3 +275,65 @@ header {
   color: #00ffe5;
 }
 
+/* ========== Responsive ========== */
+
+@media (max-width: 768px) {
+  .first,
+  .first header {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text h2 {
+    font-size: 2.2em;
+  }
+
+  .text h3 {
+    font-size: 1.5em;
+  }
+
+  .text p {
+    font-size: 1em;
+  }
+
+  .identity-switch {
+    font-size: 1.4em;
+    flex-direction: column;
+    gap: 6px;
+    top: 15px;
+  }
+
+  .menu-professional ul,
+  .menu-creative ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-arrows {
+    right: 10px;
+    gap: 20px;
+  }
+
+  .arrow {
+    font-size: 2em;
+  }
+
+  .section {
+    padding: 30px;
+  }
+
+  .section h2 {
+    font-size: 2em;
+  }
+
+  .section p {
+    font-size: 1em;
+  }
+
+  .social {
+    bottom: 10px;
+  }
+}
