@@ -113,7 +113,7 @@ header {
   color: #fff;
 }
 
-/* ========== Unified Nav ========== */
+/* ========== Unified Nav Style ========== */
 
 .menu-professional ul,
 .menu-creative ul {
@@ -275,7 +275,7 @@ header {
   color: #00ffe5;
 }
 
-/* ========== Responsive ========== */
+/* ========== Responsive Adjustments ========== */
 
 @media (max-width: 768px) {
   .first,
@@ -286,24 +286,7 @@ header {
     text-align: center;
   }
 
-  .text h2 {
-    font-size: 2.2em;
-  }
-
-  .text h3 {
-    font-size: 1.5em;
-  }
-
-  .text p {
-    font-size: 1em;
-  }
-
-  .identity-switch {
-    font-size: 1.4em;
-    flex-direction: column;
-    gap: 6px;
-    top: 15px;
-  }
+  /* Identity switch & hero titles keep desktop size — no override */
 
   .menu-professional ul,
   .menu-creative ul {
