@@ -37,12 +37,6 @@
       <p>Design. Code. Motion. Let’s create something meaningful.</p>
       <a href="#about">Explore</a>
     </div>
-
-    <ul class="social">
-      <li><a href="https://www.instagram.com/aestheticundergrads/" target="_blank">
-        <img src="instagram.png" alt="Instagram">
-      </a></li>
-    </ul>
   </section>
 
   <!-- Sections -->
@@ -66,56 +60,57 @@
     <p>Email or contact form info.</p>
   </section>
 
+  <!-- Arrows -->
   <div class="nav-arrows hidden">
-  <a href="#" class="arrow up" title="Up">↑</a>
-  <a href="#" class="arrow down" title="Down">↓</a>
-</div>
+    <a href="#" class="arrow up" title="Up">↑</a>
+    <a href="#" class="arrow down" title="Down">↓</a>
+  </div>
 
-<script>
-  const sections = [...document.querySelectorAll('.section')];
-  const upArrow = document.querySelector('.arrow.up');
-  const downArrow = document.querySelector('.arrow.down');
-  const navArrows = document.querySelector('.nav-arrows');
+  <!-- Script for arrow navigation -->
+  <script>
+    const sections = [...document.querySelectorAll('.section')];
+    const upArrow = document.querySelector('.arrow.up');
+    const downArrow = document.querySelector('.arrow.down');
+    const navArrows = document.querySelector('.nav-arrows');
 
-  function getCurrentIndex() {
-    let closest = 0;
-    let minDistance = Infinity;
-    const scroll = window.scrollY;
-    sections.forEach((sec, index) => {
-      const distance = Math.abs(sec.offsetTop - scroll);
-      if (distance < minDistance) {
-        minDistance = distance;
-        closest = index;
-      }
-    });
-    return closest;
-  }
-
-  function toggleArrowVisibility() {
-    const trigger = sections[0].offsetTop - 100; // 100px past hero section
-    if (window.scrollY >= trigger) {
-      navArrows.classList.remove('hidden');
-    } else {
-      navArrows.classList.add('hidden');
+    function getCurrentIndex() {
+      let closest = 0;
+      let minDistance = Infinity;
+      const scroll = window.scrollY;
+      sections.forEach((sec, index) => {
+        const distance = Math.abs(sec.offsetTop - scroll);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closest = index;
+        }
+      });
+      return closest;
     }
-  }
 
-  window.addEventListener('scroll', toggleArrowVisibility);
+    function toggleArrowVisibility() {
+      const trigger = sections[0].offsetTop - 100;
+      if (window.scrollY >= trigger) {
+        navArrows.classList.remove('hidden');
+      } else {
+        navArrows.classList.add('hidden');
+      }
+    }
 
-  upArrow.addEventListener('click', (e) => {
-    e.preventDefault();
-    const current = getCurrentIndex();
-    const target = sections[Math.max(current - 1, 0)];
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
+    window.addEventListener('scroll', toggleArrowVisibility);
 
-  downArrow.addEventListener('click', (e) => {
-    e.preventDefault();
-    const current = getCurrentIndex();
-    const target = sections[Math.min(current + 1, sections.length - 1)];
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-</script>
+    upArrow.addEventListener('click', (e) => {
+      e.preventDefault();
+      const current = getCurrentIndex();
+      const target = sections[Math.max(current - 1, 0)];
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
 
+    downArrow.addEventListener('click', (e) => {
+      e.preventDefault();
+      const current = getCurrentIndex();
+      const target = sections[Math.min(current + 1, sections.length - 1)];
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
