@@ -63,6 +63,24 @@ header {
   opacity: 0.8;
 }
 
+/* ========== Top-Only Vignette ========== */
+
+.vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.3) 8%,
+    rgba(0, 0, 0, 0.0) 20%
+  );
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -275,24 +293,51 @@ header {
   color: #00ffe5;
 }
 
-/* ========== Responsive Adjustments ========== */
+/* ========== Mobile & Tablet Fixes ========== */
 
 @media (max-width: 768px) {
-  .first,
-  .first header {
-    padding: 20px;
+  .first {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 60px 20px 40px;
+    gap: 20px;
     text-align: center;
   }
 
-  /* Identity switch & hero titles keep desktop size — no override */
+  .first header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .text h2 {
+    font-size: 2.5em;
+  }
+
+  .text h3 {
+    font-size: 2em;
+  }
+
+  .text p {
+    font-size: 1em;
+  }
+
+  .text a {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+
+  .identity-switch {
+    font-size: 1.4em;
+    top: 20px;
+  }
 
   .menu-professional ul,
   .menu-creative ul {
     flex-direction: column;
-    align-items: center;
     gap: 12px;
+    align-items: center;
   }
 
   .nav-arrows {
@@ -305,7 +350,7 @@ header {
   }
 
   .section {
-    padding: 30px;
+    padding: 30px 20px;
   }
 
   .section h2 {
@@ -319,4 +364,12 @@ header {
   .social {
     bottom: 10px;
   }
+}
+
+/* ========== Fix for first.section layout ========== */
+.first.section {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
 }

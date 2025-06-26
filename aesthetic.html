@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Aesthetic Undergrad | Visual Playground</title>
-  <link rel="icon" href="favicon-au.png" type="image/png">
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' href='style.css'>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Aesthetic Undergrad | Portfolio</title>
+  <link rel="icon" href="favicon-aj.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
   <!-- Identity Switch -->
   <div class="identity-switch">
     <a href="index.html" class="inactive">ANDREAS JUGUETA</a>
@@ -17,64 +17,59 @@
     <span class="active">AESTHETIC UNDERGRAD</span>
   </div>
 
-  <section id="top" class="first">
+  <!-- Hero Section -->
+  <section id="top" class="first section">
     <header>
       <div class="menu-creative">
         <ul>
-          <li><a href="#vision">Vision</a></li>
-          <li><a href="#visuals">Visuals</a></li>
-          <li><a href="#archive">Archive</a></li>
-          <li><a href="#connect">Connect</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </header>
 
     <video src="video_compressed.mp4" muted loop autoplay playsinline></video>
     <div class="overlay"></div>
-    <div class="text">
-      <h2>Creative Developer</h2>
-      <h3>Portfolio & Projects</h3>
-      <p>Welcome to the visual world of Aesthetic Undergrads.</p>
-      <a href="#vision">Enter</a>
-    </div>
+    <div class="vignette"></div>
 
-    <ul class="social">
-      <li>
-        <a href="https://www.instagram.com/_auvisuals_/" target="_blank">
-          <img src="instagram.png" alt="Instagram">
-        </a>
-      </li>
-    </ul>
+    <div class="text">
+      <h2>Creative Researcher</h2>
+      <h3>Art & Experiments</h3>
+      <p>Exploring new media, systems, and aesthetics.</p>
+      <a href="#about">Enter</a>
+    </div>
   </section>
 
   <!-- Sections -->
-  <section id="vision" class="section">
-    <h2>Vision</h2>
-    <p>The message, identity, or core idea of Aesthetic Undergrad.</p>
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>Experimental design, research, or background in the arts.</p>
   </section>
 
-  <section id="visuals" class="section">
-    <h2>Visuals</h2>
-    <p>Gallery of motion designs, 3D, or media art pieces.</p>
+  <section id="work" class="section">
+    <h2>Projects</h2>
+    <p>Installations, speculative design, or creative research output.</p>
   </section>
 
-  <section id="archive" class="section">
-    <h2>Archive</h2>
-    <p>Old or raw work, ideas, or design sketches.</p>
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <p>Methods, tools, or theoretical frameworks explored.</p>
   </section>
 
-  <section id="connect" class="section">
-    <h2>Connect</h2>
-    <p>Let’s create together — DM or email me.</p>
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Let's collaborate or connect through email/socials.</p>
   </section>
 
-  <!-- Arrows -->
+  <!-- Navigation Arrows -->
   <div class="nav-arrows hidden">
     <a href="#" class="arrow up" title="Up">↑</a>
     <a href="#" class="arrow down" title="Down">↓</a>
   </div>
 
-  <!-- Script for arrow navigation -->
+  <!-- JavaScript -->
   <script>
     const sections = [...document.querySelectorAll('.section')];
     const upArrow = document.querySelector('.arrow.up');
@@ -96,7 +91,7 @@
     }
 
     function toggleArrowVisibility() {
-      const trigger = sections[0].offsetTop - 100;
+      const trigger = sections[1].offsetTop - 100;
       if (window.scrollY >= trigger) {
         navArrows.classList.remove('hidden');
       } else {
@@ -120,5 +115,6 @@
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
+
 </body>
 </html>

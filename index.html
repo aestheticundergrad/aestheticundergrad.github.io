@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Andreas Jugueta | Portfolio</title>
   <link rel="icon" href="favicon-aj.png" type="image/png">
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' href='style.css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
   <!-- Identity Switch -->
   <div class="identity-switch">
     <span class="active">ANDREAS JUGUETA</span>
@@ -17,7 +17,8 @@
     <a href="aesthetic.html" class="inactive">AESTHETIC UNDERGRAD</a>
   </div>
 
-  <section id="top" class="first">
+  <!-- Hero Section -->
+  <section id="top" class="first section">
     <header>
       <div class="menu-professional">
         <ul>
@@ -31,6 +32,8 @@
 
     <video src="video_compressed.mp4" muted loop autoplay playsinline></video>
     <div class="overlay"></div>
+    <div class="vignette"></div>
+
     <div class="text">
       <h2>Creative Developer</h2>
       <h3>Portfolio & Projects</h3>
@@ -60,13 +63,13 @@
     <p>Email or contact form info.</p>
   </section>
 
-  <!-- Arrows -->
+  <!-- Navigation Arrows -->
   <div class="nav-arrows hidden">
     <a href="#" class="arrow up" title="Up">↑</a>
     <a href="#" class="arrow down" title="Down">↓</a>
   </div>
 
-  <!-- Script for arrow navigation -->
+  <!-- JavaScript -->
   <script>
     const sections = [...document.querySelectorAll('.section')];
     const upArrow = document.querySelector('.arrow.up');
@@ -88,7 +91,7 @@
     }
 
     function toggleArrowVisibility() {
-      const trigger = sections[0].offsetTop - 100;
+      const trigger = sections[1].offsetTop - 100; // skip the hero section
       if (window.scrollY >= trigger) {
         navArrows.classList.remove('hidden');
       } else {
@@ -112,5 +115,6 @@
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
+
 </body>
 </html>
