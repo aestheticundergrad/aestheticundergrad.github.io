@@ -301,37 +301,52 @@ header {
 @media (max-width: 768px) {
   .first {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 60px 20px 40px;
+    padding: 120px 20px 40px; /* more top padding for identity switch */
     gap: 20px;
     text-align: center;
+    position: relative;
   }
 
   .first header {
-    flex-direction: column;
+    display: none; /* hide nav menu on mobile if it’s overlapping */
+  }
+
+  .identity-switch {
+    position: relative;
+    top: 0;
+    transform: none;
+    font-size: 1.4em;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
+    text-align: center;
+    z-index: 10;
+    margin-bottom: 30px;
   }
 
   .text {
-    max-width: 90%;
     z-index: 10;
+    max-width: 90%;
     text-align: center;
   }
 
   .text h2 {
-    font-size: 2.4em;
+    font-size: 2.2em;
     line-height: 1.2;
+    margin-bottom: 0.4em;
   }
 
   .text h3 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     line-height: 1.2;
+    margin-bottom: 0.5em;
   }
 
   .text p {
     font-size: 1em;
+    margin-bottom: 1em;
   }
 
   .text a {
@@ -339,31 +354,16 @@ header {
     padding: 10px 20px;
   }
 
-  .identity-switch {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    gap: 10px;
-    top: 20px;
-    text-align: center;
-    z-index: 1001;
+  .first video {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
   }
 
-  .menu-professional ul,
-  .menu-creative ul {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .nav-arrows {
-    right: 10px;
-    gap: 20px;
-  }
-
-  .arrow {
-    font-size: 2em;
+  .vignette,
+  .overlay {
+    z-index: 1;
   }
 
   .section {
@@ -378,16 +378,19 @@ header {
     font-size: 1em;
   }
 
+  .nav-arrows {
+    right: 10px;
+    gap: 20px;
+  }
+
+  .arrow {
+    font-size: 2em;
+  }
+
   .social {
     bottom: 10px;
   }
-
-  .first video {
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
-    min-height: 100vh;
-  }
 }
+
 
 
